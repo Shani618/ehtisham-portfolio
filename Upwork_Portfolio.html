@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ehtisham Ul Haq - Full-Stack Mobile Developer</title>
+    <meta name="description" content="Expert Full-Stack Mobile Developer specializing in iOS, Android, IoT, and NFC solutions. 8+ years experience building cross-platform apps with Swift, Kotlin, and Python.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📱%3C/text%3E%3C/svg%3E">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Section */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            border-radius: 25px;
+            padding: 50px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.7s;
+        }
+
+        .header:hover::before {
+            left: 100%;
+        }
+
+        .profile-image {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            margin: 0 auto 25px;
+            background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 65px;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .header h1 {
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header .subtitle {
+            font-size: 1.4em;
+            color: #666;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .header .specialization {
+            font-size: 1.1em;
+            color: #888;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .platform-badges {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .platform-badge {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(240, 147, 251, 0.1));
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 0.9em;
+            font-weight: 600;
+            color: #667eea;
+            border: 2px solid rgba(102, 126, 234, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .platform-badge:hover {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(240, 147, 251, 0.2));
+            transform: translateY(-2px);
+        }
+
+        .availability {
+            background: linear-gradient(135deg, rgba(46, 204, 113, 0.1), rgba(52, 152, 219, 0.1));
+            padding: 15px 25px;
+            border-radius: 25px;
+            margin-top: 20px;
+            border: 2px solid rgba(46, 204, 113, 0.3);
+        }
+
+        .availability-text {
+            color: #27ae60;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+
+        /* Section Styling */
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            border-radius: 25px;
+            padding: 45px;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-8px);
+        }
+
+        .section h2 {
+            font-size: 2.8em;
+            margin-bottom: 35px;
+            background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea, #f093fb);
+            border-radius: 2px;
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 35px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 17px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, #667eea, #764ba2, #f093fb);
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 45px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(240, 147, 251, 0.05));
+            padding: 30px;
+            border-radius: 20px;
+            border-left: 5px solid #667eea;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -54px;
+            top: 30px;
+            width: 18px;
+            height: 18px;
+            background: linear-gradient(135deg, #667eea, #f093fb);
+            border: 4px solid white;
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(102, 126, 234, 0.6);
+        }
+
+        .timeline-item h3 {
+            color: #667eea;
+            font-size: 1.5em;
+            margin-bottom: 8px;
+        }
+
+        .timeline-item .company {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        .timeline-item .date {
+            color: #666;
+            font-size: 0.95em;
+            margin-bottom: 20px;
+        }
+
+        .timeline-item ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .timeline-item li {
+            margin-bottom: 10px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .timeline-item li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        /* Skills Grid */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 25px;
+        }
+
+        .skill-category {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.6));
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        }
+
+        .skill-category h3 {
+            color: #667eea;
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+        }
+
+        .skill-item {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(240, 147, 251, 0.1));
+            padding: 18px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .skill-item:hover {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(240, 147, 251, 0.2));
+            border-color: #667eea;
+            transform: translateY(-5px);
+        }
+
+        .skill-item .skill-icon {
+            font-size: 2.2em;
+            margin-bottom: 8px;
+            color: #667eea;
+        }
+
+        .skill-item .skill-name {
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 35px;
+            margin-top: 25px;
+        }
+
+        .project-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+            padding: 35px;
+            border-radius: 25px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(102, 126, 234, 0.3);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-card h3 {
+            color: #333;
+            margin-bottom: 12px;
+            font-size: 1.4em;
+        }
+
+        .project-platforms {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .platform-tag {
+            background: linear-gradient(135deg, #667eea, #f093fb);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.75em;
+            font-weight: 600;
+        }
+
+        .project-card .project-description {
+            color: #555;
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .tech-tag {
+            background: rgba(102, 126, 234, 0.1);
+            color: #667eea;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 500;
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, #f093fb, #667eea);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.7em;
+            font-weight: 600;
+        }
+
+        /* Value Proposition Section */
+        .value-prop {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(240, 147, 251, 0.05));
+            padding: 35px;
+            border-radius: 20px;
+            border-left: 5px solid #667eea;
+            margin-bottom: 30px;
+        }
+
+        .value-prop h3 {
+            color: #667eea;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .value-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .value-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 15px;
+        }
+
+        .value-icon {
+            font-size: 1.5em;
+            color: #667eea;
+            margin-top: 5px;
+        }
+
+        .value-content h4 {
+            color: #333;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        .value-content p {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .header {
+                padding: 30px 20px;
+            }
+
+            .header h1 {
+                font-size: 2.5em;
+            }
+
+            .platform-badges {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 30px 20px;
+            }
+
+            .timeline {
+                padding-left: 25px;
+            }
+
+            .timeline-item::before {
+                left: -44px;
+            }
+
+            .value-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .section:nth-child(2) { animation-delay: 0.1s; }
+        .section:nth-child(3) { animation-delay: 0.2s; }
+        .section:nth-child(4) { animation-delay: 0.3s; }
+        .section:nth-child(5) { animation-delay: 0.4s; }
+        .section:nth-child(6) { animation-delay: 0.5s; }
+        .section:nth-child(7) { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <div class="profile-image">EH</div>
+            <h1>Ehtisham Ul Haq</h1>
+            <p class="subtitle">Full-Stack Mobile App Developer</p>
+            <p class="specialization">iOS • Android • IoT • NFC • Cross-Platform Solutions</p>
+            
+            <div class="platform-badges">
+                <span class="platform-badge">🍎 iOS Development</span>
+                <span class="platform-badge">🤖 Android Development</span>
+                <span class="platform-badge">🌐 IoT Integration</span>
+                <span class="platform-badge">📡 NFC Solutions</span>
+            </div>
+
+            <div class="availability">
+                <div class="availability-text">✅ Available for New Projects • Ready to Start Immediately</div>
+            </div>
+        </div>
+
+        <!-- About Me Section -->
+        <div class="section">
+            <h2>About Me</h2>
+            <div style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(240, 147, 251, 0.05)); padding: 35px; border-radius: 20px; border-left: 5px solid #667eea;">
+                <p style="font-size: 1.1em; line-height: 1.8; color: #555; margin-bottom: 20px;">
+                    I'm a passionate Full-Stack Mobile Developer with <strong>8+ years of experience</strong> crafting innovative cross-platform solutions. My expertise spans the entire mobile ecosystem, from native iOS and Android development to cutting-edge IoT integrations and NFC implementations.
+                </p>
+                <p style="font-size: 1.1em; line-height: 1.8; color: #555; margin-bottom: 20px;">
+                    What sets me apart is my ability to bridge the gap between complex technical requirements and user-friendly experiences. I believe in writing clean, maintainable code while delivering products that not only meet business objectives but exceed user expectations.
+                </p>
+                <p style="font-size: 1.1em; line-height: 1.8; color: #555;">
+                    My approach combines <strong>technical excellence</strong> with <strong>strategic thinking</strong>, ensuring every project I work on is scalable, secure, and built for the future. I'm particularly passionate about emerging technologies like NFC payments and IoT integrations that are shaping the future of mobile commerce.
+                </p>
+            </div>
+        </div>
+
+        <!-- Value Proposition Section -->
+        <div class="section">
+            <h2>Why Choose Me</h2>
+            <div class="value-prop">
+                <h3>🚀 What I Bring to Your Project</h3>
+                <div class="value-list">
+                    <div class="value-item">
+                        <div class="value-icon">⚡</div>
+                        <div class="value-content">
+                            <h4>Fast Delivery</h4>
+                            <p>Efficient development with 60% faster deployment through optimized CI/CD pipelines</p>
+                        </div>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">🎯</div>
+                        <div class="value-content">
+                            <h4>Cross-Platform Expertise</h4>
+                            <p>True native development for both iOS and Android with 100% feature parity</p>
+                        </div>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">🔧</div>
+                        <div class="value-content">
+                            <h4>Cutting-Edge Tech</h4>
+                            <p>Specialized in NFC, IoT integration, and modern payment solutions</p>
+                        </div>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">📈</div>
+                        <div class="value-content">
+                            <h4>Proven Results</h4>
+                            <p>Delivered apps serving 100K+ users with 99.9% uptime and $2M+ transaction processing</p>
+                        </div>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">🛡️</div>
+                        <div class="value-content">
+                            <h4>Enterprise Security</h4>
+                            <p>Military-grade encryption and security protocols for sensitive applications</p>
+                        </div>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">🎨</div>
+                        <div class="value-content">
+                            <h4>User-Centric Design</h4>
+                            <p>Focus on UX that improves user engagement by 60% and retention rates</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Experience Section -->
+        <div class="section">
+            <h2>Professional Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Senior Full-Stack Mobile Developer</h3>
+                    <div class="company">AIO</div>
+                    <div class="date">April 2023 - Present</div>
+                    <ul>
+                        <li>Developed cross-platform POS applications serving <strong>500+ restaurants</strong> with 99.9% uptime</li>
+                        <li>Implemented NFC Tap-to-Pay functionality processing <strong>$2M+ daily transactions</strong></li>
+                        <li>Built Kitchen Display System reducing order processing time by <strong>40%</strong></li>
+                        <li>Led mobile development team of <strong>6 developers</strong> across iOS and Android platforms</li>
+                        <li>Established CI/CD pipelines reducing deployment time by <strong>60%</strong></li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Lead Mobile Developer</h3>
+                    <div class="company">NetelSoft (Remote)</div>
+                    <div class="date">April 2021 - May 2023</div>
+                    <ul>
+                        <li>Developed VPN applications downloaded by <strong>100K+ users</strong> across both platforms</li>
+                        <li>Implemented advanced VPN protocols achieving <strong>95% connection success rate</strong></li>
+                        <li>Built split-tunneling functionality improving user experience by <strong>35%</strong></li>
+                        <li>Maintained 100% feature parity across iOS and Android platforms</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>IoT Mobile Developer</h3>
+                    <div class="company">Industrial Solutions</div>
+                    <div class="date">2022 - 2023</div>
+                    <ul>
+                        <li>Developed Aduro App controlling <strong>200+ industrial ovens</strong> across North America</li>
+                        <li>Built BBQ Grill App managing <strong>50+ commercial locations</strong></li>
+                        <li>Implemented NFC protocols with <strong>98% successful pairing rate</strong></li>
+                        <li>Created cross-platform solutions reducing development costs by <strong>45%</strong></li>
+                        <li>Integrated real-time monitoring achieving <strong>±1°F temperature accuracy</strong></li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Cross-Platform Mobile Developer</h3>
+                    <div class="company">Orenda, Islamabad</div>
+                    <div class="date">June 2019 - July 2020</div>
+                    <ul>
+                        <li>Designed and developed "Taleemabad" reaching <strong>50K+ students</strong> nationwide</li>
+                        <li>Implemented streaming capabilities supporting <strong>1000+ concurrent users</strong></li>
+                        <li>Built responsive UI/UX improving user engagement by <strong>60%</strong></li>
+                        <li>Integrated AWS services reducing server costs by <strong>30%</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills Section -->
+        <div class="section">
+            <h2>Technical Expertise</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>🍎 iOS Development</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-icon">🔤</div>
+                            <div class="skill-name">Swift</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">🎨</div>
+                            <div class="skill-name">SwiftUI</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">📱</div>
+                            <div class="skill-name">UIKit</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">🏗️</div>
+                            <div class="skill-name">MVVM</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>🤖 Android Development</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-icon">🔥</div>
+                            <div class="skill-name">Kotlin</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">☕</div>
+                            <div class="skill-name">Java</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">🎯</div>
+                            <div class="skill-name">Jetpack Compose</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">🏛️</div>
+                            <div class="skill-name">MVVM</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>🌐 Backend & IoT</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-icon">🐍</div>
+                            <div class="skill-name">Python</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">⚡</div>
+                            <div class="skill-name">IoT Integration</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">📡</div>
+                            <div class="skill-name">NFC</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">🔌</div>
+                            <div class="skill-name">REST APIs</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>🛠️ Tools & Services</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-icon">🔥</div>
+                            <div class="skill-name">Firebase</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">☁️</div>
+                            <div class="skill-name">AWS</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">🔄</div>
+                            <div class="skill-name">CI/CD</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">🗄️</div>
+                            <div class="skill-name">Core Data</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Featured Projects Section -->
+        <div class="section">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="featured-badge">Featured</div>
+                    <h3>AIO POS System</h3>
+                    <div class="project-platforms">
+                        <span class="platform-tag">iOS</span>
+                        <span class="platform-tag">Android</span>
+                    </div>
+                    <div class="project-description">
+                        Revolutionary POS system transforming retail operations with contactless payments. Serves 500+ restaurants processing $2M+ daily transactions with 99.9% uptime. Features advanced inventory management, real-time analytics, and seamless multi-platform synchronization.
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">SwiftUI</span>
+                        <span class="tech-tag">Kotlin</span>
+                        <span class="tech-tag">NFC</span>
+                        <span class="tech-tag">Stripe API</span>
+                        <span class="tech-tag">Real-time Sync</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Enterprise VPN Solution</h3>
+                    <div class="project-platforms">
+                        <span class="platform-tag">iOS</span>
+                        <span class="platform-tag">Android</span>
+                    </div>
+                    <div class="project-description">
+                        Enterprise-grade VPN solution trusted by 100K+ users worldwide. Delivers military-grade encryption with 95% connection success rate. Features smart routing, kill-switch protection, and zero-log policy for maximum privacy and security.
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Swift</span>
+                        <span class="tech-tag">Kotlin</span>
+                        <span class="tech-tag">OpenConnect</span>
+                        <span class="tech-tag">MVVM</span>
+                        <span class="tech-tag">Split-tunneling</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="featured-badge">IoT</div>
+                    <h3>Industrial IoT Control System</h3>
+                    <div class="project-platforms">
+                        <span class="platform-tag">iOS</span>
+                        <span class="platform-tag">Android</span>
+                        <span class="platform-tag">IoT</span>
+                    </div>
+                    <div class="project-description">
+                        Smart industrial automation platform controlling 200+ ovens across North America. Achieves ±1°F temperature precision with 98% successful device pairing. Reduces energy consumption by 25% through intelligent scheduling and monitoring.
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Swift</span>
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">IoT</span>
+                        <span class="tech-tag">NFC</span>
+                        <span class="tech-tag">Real-time Control</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Educational Platform</h3>
+                    <div class="project-platforms">
+                        <span class="platform-tag">iOS</span>
+                        <span class="platform-tag">Android</span>
+                    </div>
+                    <div class="project-description">
+                        Pakistan's leading educational platform reaching 50K+ students nationwide. Supports 1000+ concurrent video streams with 60% improved user engagement. Winner of multiple EdTech awards for innovation in mobile learning.
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Swift</span>
+                        <span class="tech-tag">Kotlin</span>
+                        <span class="tech-tag">Video Streaming</span>
+                        <span class="tech-tag">Animations</span>
+                        <span class="tech-tag">AWS</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Real-time Kitchen Management</h3>
+                    <div class="project-platforms">
+                        <span class="platform-tag">iOS</span>
+                        <span class="platform-tag">Android</span>
+                    </div>
+                    <div class="project-description">
+                        Real-time kitchen management system for commercial environments. Built with SwiftUI and Kotlin, featuring order queue management, real-time updates, and robust performance optimization for high-volume operations.
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">SwiftUI</span>
+                        <span class="tech-tag">Kotlin</span>
+                        <span class="tech-tag">Real-time Updates</span>
+                        <span class="tech-tag">Queue Management</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Commercial BBQ Control App</h3>
+                    <div class="project-platforms">
+                        <span class="platform-tag">iOS</span>
+                        <span class="platform-tag">Android</span>
+                        <span class="platform-tag">IoT</span>
+                    </div>
+                    <div class="project-description">
+                        Commercial oven management system for BBQ operations managing 50+ locations. Implements NFC communication for device setup, precise temperature control, and comprehensive monitoring with energy optimization features.
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Swift</span>
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">IoT Integration</span>
+                        <span class="tech-tag">NFC</span>
+                        <span class="tech-tag">Temperature Control</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Education Section -->
+        <div class="section">
+            <h2>Education & Qualifications</h2>
+            <div class="timeline-item">
+                <h3>Bachelor in Software Engineering</h3>
+                <div class="company">COMSATS University, Islamabad</div>
+                <div class="date">February 2015 - January 2019</div>
+                <ul>
+                    <li>Comprehensive software engineering curriculum with mobile development focus</li>
+                    <li>Specialized coursework in cross-platform development and system architecture</li>
+                    <li>Strong foundation in computer science fundamentals and IoT systems</li>
+                    <li>Project-based learning with real-world application development</li>
+                    <li>Advanced coursework in mobile security and payment system integration</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
